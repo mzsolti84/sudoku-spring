@@ -7,6 +7,6 @@ RUN mvn clean package
 # the second stage of our build will use open jdk
 FROM openjdk:17-slim
 # copy only the artifacts we need from the first stage and discard the rest
-COPY --from=MAVEN_BUILD /target/sudoku-1.0.1-SNAPSHOT.jar /sudoku.jar
+COPY --from=MAVEN_BUILD /target/sudoku-1.0.2-SNAPSHOT.jar /sudoku.jar
 # set the startup command to execute the jar
 CMD ["java", "-jar", "/sudoku.jar"]
