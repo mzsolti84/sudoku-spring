@@ -1,5 +1,6 @@
 server:
-  port: 10122
+  address: 0.0.0.0
+  port: 80
 spring:
   security:
     user:
