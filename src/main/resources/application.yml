@@ -1,0 +1,7 @@
+server:
+  port: 10122
+spring:
+  security:
+    user:
+      name: admin
+      password: admin

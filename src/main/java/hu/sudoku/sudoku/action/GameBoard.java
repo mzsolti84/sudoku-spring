@@ -12,7 +12,7 @@ public class GameBoard {
     public static final Set<Integer> ALL_POSSIBLE_VALUES = Set.of(1, 2, 3, 4, 5, 6, 7, 8, 9);
 
     private final Random random = new Random();
-    private final int[][] data;
+    private int[][] data;
     private int[][] newPuzzle;
 
     public GameBoard() {
@@ -28,6 +28,9 @@ public class GameBoard {
 
     //játéktábla generálása "back-track" módszer segítségével
     public void createPuzzle(int numbersOfFreePlaces) {
+        data = new int[SUDOKU_SIZE][SUDOKU_SIZE];
+        //Arrays.stream(data).forEach(a -> Arrays.fill(a, 0));
+
         solve(1, false);
         var allFilledPositions = getAllFilledPositions();
         var position = allFilledPositions.get(random.nextInt(allFilledPositions.size()));
